@@ -1,0 +1,7 @@
+<h2>Our Programs</h2>
+<ul>
+    {% for program in programs %}
+        <li><strong>{{ program.title }}</strong> - {{ program.duration }}</li>
+        <p>{{ program.description }}</p>
+    {% endfor %}
+</ul>
