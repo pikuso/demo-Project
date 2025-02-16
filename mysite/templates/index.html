@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Головна{% endblock %} | KROK</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <!-- 🔝 Верхний блок -->
+    <header>
+        <div class="header-content">
+            <div class="search-box">
+                <input type="text" placeholder="Пошук..." class="search-input">
+            </div>
+            <!-- Языковой выбор с левой стороны -->
+            <div class="language-selector">
+                <button class="dropdown-btn">🌍 Обрати мову</button>
+                <ul class="dropdown-menu">
+                    <li><a href="?lang=uk">Українська</a></li>
+                    <li><a href="?lang=en">English</a></li>
+                    <li><a href="?lang=fr">Français</a></li>
+                    <li><a href="?lang=de">Deutsch</a></li>
+                    <li><a href="?lang=es">Español</a></li>
+                    <li><a href="?lang=it">Italiano</a></li>
+                    <li><a href="?lang=pl">Polski</a></li>
+                    <li><a href="?lang=ru">Русский</a></li>
+                </ul>
+            </div>        
+            
+            <!-- Логотип с правой стороны -->
+            <div class="logo">
+                <img src="{% static 'images/logo.jpeg' %}" alt="KROK Logo">
+            </div>
+        </div>
+    </header>
+
+    <!-- 🔽 Навигация -->
+   <!-- 🔽 Навигация -->
+<nav>
+    <ul class="nav-menu">
+        <li><a href="#">Про університет</a>
+            <ul class="dropdown">
+                <li><a href="#">Історія</a></li>
+                <li><a href="#">Викладачі</a></li>
+                <li><a href="#">Партнери</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Абітурієнту</a>
+            <ul class="dropdown">
+                <li><a href="#">Спеціальності</a></li>
+                <li><a href="#">Вартість навчання</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Студенту</a></li>
+        <li><a href="#">Новини</a></li>
+        <li><a href="#">Контакти</a></li>
+    </ul>
+</nav>
+
+    <aside class="sidebar">
+        <h3>Корисні посилання</h3>
+        <ul>
+            <li><a href="#">Розклад занять</a></li>
+            <li><a href="#">Бібліотека</a></li>
+            <li><a href="#">Електронний кабінет</a></li>
+        </ul>
+    </aside>    
+
+    <!-- 📌 Контент страницы -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- 📎 Футер -->
+    <footer>
+        <p>© 2008-2025 - Інтернет-портал - Університет «КРОК»</p>
+        <div class="footer-links">
+            <a href="#">Соцмережі</a> |
+            <a href="#">Контакти</a> |
+            <a href="#">Оплата</a>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
